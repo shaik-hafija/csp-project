@@ -1,0 +1,86 @@
+<div class="navbar navbar-light bg-success navbar-expand-md ">
+  <a href="" class="navbar-brand" style="font-size: xx-large;color:rgb(253, 253, 253)">Green Village <span
+          class="bi bi-tree-fill green-color"></span></a>
+
+  <div class="main-search-input-wrap ms-auto p-2">
+      <div class="main-search-input fl-wrap">
+          <div class="main-search-input-item">
+              <input type="text" value="" placeholder="Search Products...">
+              <button class="main-search-button">Search</button>
+          </div>
+      </div>
+  </div>
+</div>
+
+<div class="container-fluid text-center ">
+
+  <div class="row border p-2" style="font-size: x-large;" id="topnav">
+      <div class="col"><a class="navbar-brand activity" href="#" style="color: GREEN; font-weight:bold;" routerLink="home">Home</a></div>
+      <div class="col">
+          <a href="#" class="nav-link active dropdown-toggle" data-bs-toggle="dropdown" style="color: GREEN; font-weight:bold;">Plant types</a>
+
+          <div class="dropdown-menu w-100 mt-0" aria-labelledby="navbarDropdown">
+
+              <div class="container">
+                  <div class="row my-3">
+                      <div class="col-md-6 col-lg-3 mb-3 mb-lg-0">
+                          <div class="list-group list-group-flush">
+                              <a href="" class="list-group-item list-group-item-action"routerLink="flower" >Flowers</a>
+                              <a href="" class="list-group-item list-group-item-action">Dolor sit</a>
+                              <a href="" class="list-group-item list-group-item-action">Amet consectetur</a>
+                              <a href="" class="list-group-item list-group-item-action">Cras justo odio</a>
+                              <a href="" class="list-group-item list-group-item-action">Adipisicing elit</a>
+                          </div>
+                      </div>
+                      <div class="col-md-6 col-lg-3 mb-3 mb-lg-0">
+                          <div class="list-group list-group-flush">
+                              <a href="" class="list-group-item list-group-item-action">Explicabo voluptas</a>
+                              <a href="" class="list-group-item list-group-item-action">Perspiciatis quo</a>
+                              <a href="" class="list-group-item list-group-item-action">Cras justo odio</a>
+                              <a href="" class="list-group-item list-group-item-action">Laudantium maiores</a>
+                              <a href="" class="list-group-item list-group-item-action">Provident dolor</a>
+                          </div>
+                      </div>
+                      <div class="col-md-6 col-lg-3 mb-3 mb-md-0">
+                          <div class="list-group list-group-flush">
+                              <a href="" class="list-group-item list-group-item-action">Iste quaerato</a>
+                              <a href="" class="list-group-item list-group-item-action">Cras justo odio</a>
+                              <a href="" class="list-group-item list-group-item-action">Est iure</a>
+                              <a href="" class="list-group-item list-group-item-action">Praesentium</a>
+                              <a href="" class="list-group-item list-group-item-action">Laboriosam</a>
+                          </div>
+                      </div>
+                      <div class="col-md-6 col-lg-3">
+                          <div class="list-group list-group-flush">
+                              <a href="" class="list-group-item list-group-item-action">Cras justo odio</a>
+                              <a href="" class="list-group-item list-group-item-action">Saepe</a>
+                              <a href="" class="list-group-item list-group-item-action">Vel alias</a>
+                              <a href="" class="list-group-item list-group-item-action">Sunt doloribus</a>
+                              <a href="" class="list-group-item list-group-item-action">Cum dolores</a>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="col"><a class="navbar-brand" href="#" style="color: GREEN;font-weight:bold;">Planting conditions</a></div>
+      <div class="col"><a class="navbar-brand" href="#" style="color: GREEN; font-weight:bold;" routerLink="sell">Sell here</a></div>
+      <div class="col"><a class="navbar-brand" href="#" style="color: GREEN; font-weight:bold;">Seasonaly</a></div>
+      <div class="col"><a href="#" class="nav-link active dropdown-toggle" data-bs-toggle="dropdown" style="color: GREEN;font-weight:bold;" >Village</a>
+          <ul class="dropdown-menu">
+              <li class="dropdown-item" routerLink="impact">impact</li>
+              <li class="dropdown-item" routerLink="timeline">Timeline</li>
+              <li class="dropdown-item">photos</li>
+              
+          </ul>
+
+          <!-- Dropdown menu -->
+      </div>
+  
+  </div>
+
+  <router-outlet></router-outlet>
+ 
+ 
+
+  
