@@ -8,6 +8,7 @@ import { ImpactComponent } from './impact/impact.component';
 import { TimelineComponent } from './timeline/timeline.component';
 import { FlowersComponent } from './flowers/flowers.component';
 import { SellComponent } from './sell/sell.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { SellComponent } from './sell/sell.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import{
- 
+ InsertedSuccess,
+ UniqueConstraintError,
   Read,
   Flower
 } from './flower';
@@ -20,6 +21,15 @@ export class FlowerservicwService {
   private url = 'http://localhost:3000/';
   Getflower(p_type: String): Observable<Read> {
     return this.http.get<Read>(`${this.url}plants/Read${p_type}`);
+  }
+  Insert(
+    Details: Flower
+  ): Observable<InsertedSuccess | UniqueConstraintError> {
+    return this.http.post<InsertedSuccess | UniqueConstraintError>(
+      this.url + 'plants/Insert',
+      Details,
+      { headers: this.headers }
+    );
   }
 
 }
