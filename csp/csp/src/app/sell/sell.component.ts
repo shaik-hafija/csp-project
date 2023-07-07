@@ -9,13 +9,13 @@ import { Subscription } from 'rxjs';
 import { FlowerservicwService } from '../flowerservicw.service'
 
 @Component({
-    selector: 'app-sell',
-    templateUrl: './sell.component.html',
-    styleUrls: ['./sell.component.css']
-  })
+  selector: 'app-sell',
+  templateUrl: './sell.component.html',
+  styleUrls: ['./sell.component.css']
+})
 export class SellComponent implements OnInit, OnDestroy {
-  constructor(private Service: FlowerservicwService) {}
-  ngOnInit() {}
+  constructor(private Service: FlowerservicwService) { }
+  ngOnInit() { }
   Subscription: Subscription = new Subscription();
   User: Flower = {
     p_id: '',
@@ -31,34 +31,35 @@ export class SellComponent implements OnInit, OnDestroy {
     this.ErrorMsg = '';
     this.SuccessMsg = '';
 
-    //   this.Subscription = this.Service.Insert(this.User).subscribe(
-    //     (data)=>{
-    //       if(data){
-    //         console.log(data);
-    //       }
-    //       else{
-    //         console.log("Failed");
-    //       }
-    //     }
-    //   )
-    // }
-
-    this.Subscription = this.Service.Insert(this.User).subscribe({
-      next: (Data: InsertedSuccess | UniqueConstraintError) => {
-        if ('errorNum' in Data) {
-          this.ErrorMsg = `${this.User.p_id} alredy Exists`;
-        } else {
-          this.SuccessMsg = `${this.User.p_id} Inserted Succesfully`;
+    this.Subscription = this.Service.Insert(this.User).subscribe(
+      (data) => {
+        if (data) {
+          console.log(data);
+          
         }
-      },
-      error: (Error) => {
-        console.log(Error);
-      },
-    });
-    // this the another syntax for the Subscribe Its advanced Handling everything
+        else {
+          console.log("Failed");
+        }
+      }
+    )
   }
-  
-  ngOnDestroy() {
-    this.Subscription.unsubscribe();
-  }
+
+  // this.Subscription = this.Service.Insert(this.User).subscribe({
+  //   next: (Data: InsertedSuccess | UniqueConstraintError) => {
+  //     if ('errorNum' in Data) {
+  //       this.ErrorMsg = `${this.User.p_id} alredy Exists`;
+  //     } else {
+  //       this.SuccessMsg = `${this.User.p_id} Inserted Succesfully`;
+  //     }
+  //   },
+  //   error: (Error) => {
+  //     console.log(Error);
+  //   },
+// });
+//     // this the another syntax for the Subscribe Its advanced Handling everything
+//   }
+
+ngOnDestroy() {
+  this.Subscription.unsubscribe();
+}
 }

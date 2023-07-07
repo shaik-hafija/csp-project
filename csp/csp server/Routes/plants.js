@@ -6,7 +6,7 @@ const Router = express.Router();
 Router.post("/Insert", (req, res) => {
   let Details = req.body;                                  
   console.log(Details);
-  Result("plants", "Insert", Details)
+  Result("plant", "Insert", Details)
     .then((result) => {
       res.send(result);
       console.log(result);
@@ -17,7 +17,7 @@ Router.post("/Insert", (req, res) => {
 });
 Router.delete("/Delete:ID", (req, res) => {
   let Details = req.params.ID;
-  Result("emp1", "Delete", Details)
+  Result("plant", "Delete", Details)
     .then((result) => {
       res.send(result);
       console.log(result);
@@ -31,7 +31,7 @@ Router.put("/Update:ID", (req, res) => {
   let UpdatedDetails = req.body;
   console.log(UpdatedDetails);
   console.log(Details);
-  Result("emp1", "Update", Details, UpdatedDetails)
+  Result("plant", "Update", Details, UpdatedDetails)
     .then((result) => {
       res.send(result.Message);
       console.log(result);
@@ -42,7 +42,7 @@ Router.put("/Update:ID", (req, res) => {
 });
 Router.get("/Read:_ID", (req, res) => {
   const Details = req.params._ID;
-  Result("plants", "Read", Details)
+  Result("plant", "Read", Details)
     .then((result) => {
       res.send(result.rows);
       console.log(result);

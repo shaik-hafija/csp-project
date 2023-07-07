@@ -48,11 +48,11 @@ const dbConfig = {
         Message = "Inserted Successfully";
         break;
       case "Update":
-        Sql = `update ${Parameters[0]} set Password = '${Parameters[3].Password}' where Log= '${Details}'`;
-        Message = `Succes Updating from ${Details.Login, Details.Password} to ${Parameters[3].Login, Parameters[3].Password}`;
+        Sql = `update ${Parameters[0]} set p_name = '${Parameters[3].p_name}' where p_id= '${Details}'`;
+        Message = `Succes Updating from ${Details.p_name, Details.p_id} to ${Parameters[3].p_name, Parameters[3].p_id}`;
         break;
       case "Delete":
-        Sql = `delete from ${Parameters[0]} where Log= '${Details}'`;
+        Sql = `delete  from ${Parameters[0]} where p_type= '${Details}'`;
         Message = `Success deleting ${Details}`;
         
         break;
