@@ -5,6 +5,8 @@ import { ImpactComponent } from './impact/impact.component';
 import { TimelineComponent } from './timeline/timeline.component';
 import { FlowersComponent } from './flowers/flowers.component';
 import { SellComponent } from './sell/sell.component';
+import { Flower1Component } from './flower1/flower1.component';
+import { OrderComponent } from './order/order.component';
 
 const routes: Routes = [
   {
@@ -20,17 +22,32 @@ const routes: Routes = [
     component:TimelineComponent
   },
   {
-    path:'flower',
-    component:FlowersComponent
+    path:'flower1',
+    component:Flower1Component
   },
   {
     path:'sell',
     component:SellComponent
+  },
+  {
+    path:'order',
+    component:OrderComponent
   }
 ];
+
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
+  
 })
 export class AppRoutingModule { }
+export const myRoutings=[
+ Flower1Component,
+ OrderComponent,
+ FlowersComponent,
+  HomeComponent,
+  TimelineComponent,
+  ImpactComponent,
+ 
+  ]

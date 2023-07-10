@@ -6,7 +6,7 @@ const Router = express.Router();
 Router.post("/Insert", (req, res) => {
   let Details = req.body;                                  
   console.log(Details);
-  Result("plant", "Insert", Details)
+  Result("plantss", "Insert", Details)
     .then((result) => {
       res.send(result);
       console.log(result);
@@ -42,7 +42,7 @@ Router.put("/Update:ID", (req, res) => {
 });
 Router.get("/Read:_ID", (req, res) => {
   const Details = req.params._ID;
-  Result("plant", "Read", Details)
+  Result("plantss", "Read", Details)
     .then((result) => {
       res.send(result.rows);
       console.log(result);
