@@ -17,4 +17,21 @@ export interface Flower {
   export interface Read {
     Result: [];
   }
-  
+  export interface Signupinterface
+  {
+    name:String;
+    email:string;
+    password:String;
+
+  }
+  export interface Logininterface
+  {
+      
+    email:string;
+    password:String;
+    
+  }
+  export interface search
+  {
+    p_name:string;
+  }

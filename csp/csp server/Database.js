@@ -25,7 +25,7 @@ const dbConfig = {
     }
   };
   
-  const Result = async (...Parameters) => {
+  const Result1 = async (...Parameters) => {
     // console.log("hey error");
     
     let Sql, Message;
@@ -40,7 +40,7 @@ const dbConfig = {
     // {
 
     // }
-    //Details = eval(`(${Parameters[2]})`); 
+    // Details = eval(`(${Parameters[2]})`); 
      
    switch (Parameters[1]) {
       case "Insert":
@@ -48,11 +48,11 @@ const dbConfig = {
         Message = "Inserted Successfully";
         break;
       case "Update":
-        Sql = `update ${Parameters[0]} set p_name = '${Parameters[3].p_name}' where p_id= '${Details}'`;
+        Sql = `update ${Parameters[0]} set p_name = '${Parameters[3].p_name}',p_image = '${Parameters[3].p_image}',p_type = '${Parameters[3].p_type}',p_cost = ${Parameters[3].p_cost} where p_id= '${Details}'`;
         Message = `Succes Updating from ${Details.p_name, Details.p_id} to ${Parameters[3].p_name, Parameters[3].p_id}`;
         break;
       case "Delete":
-        Sql = `delete  from ${Parameters[0]} where p_type= '${Details}'`;
+        Sql = `delete  from ${Parameters[0]} where p_id= '${Details}'`;
         Message = `Success deleting ${Details}`;
         
         break;
@@ -60,7 +60,18 @@ const dbConfig = {
           // Sql = `select * from ${Parameters[0]}`;
           // Message = `Showing all the values in the database ${Parameters[0]}`;
           // if(Details.p_type){
-            Sql = `select * from ${Parameters[0]} where p_type = '${Details}'`;
+          
+            if(Details == "flower"){
+              Sql = `select * from ${Parameters[0]} where p_type = '${Details}'`;
+            }
+            else if(Details == "All")
+            {
+              Sql = `select * from ${Parameters[0]}`;
+            }
+            else
+            {
+              Sql = `select * from ${Parameters[0]} where p_name = '${Details}'`;
+            }
             Message = `${Details} Retrived`
           // }
           
@@ -74,4 +85,58 @@ const dbConfig = {
     result.Message = Message;
     return result;
   };
-  module.exports = Result;
+  const register= async (...Parameters)=>
+  {
+    let sql,message;
+    console.log(Parameters[2]);
+    Details=Parameters[2];
+    switch(Parameters[1])
+    {
+      case "Insert":
+        sql = `insert into ${Parameters[0]} values('${Details.yourname}','${Details.email}','${Details.password}')`;
+        message="inserted successfully";
+        break;
+      case 'Read':
+        sql=`select * from ${Parameters[0]} where email='${Details}'`;
+        message="Read successfully";
+      default:
+      console.log("Inavlid");
+      break;
+
+    }
+    console.log(sql);
+    var result=await Query(sql);
+    result.message-message;
+    return result;
+
+  }
+
+
+const login=async(...Parameters)=>
+{
+  let sql,message;
+   Details=Parameters[2];
+  console.log(Parameters[2]);
+  switch(Parameters[1])
+  {
+    case 'Read':
+      sql =`select * from ${Parameters[0]} where email='${Details}'`;
+
+      message="read succesfully";
+    default:
+      console.log("Inavlid");
+      break;
+  
+  }
+  console.log(sql);
+  var result=await Query(sql);
+  result.message=message;
+  return result;
+}
+
+
+  module.exports = {
+    Result1:Result1,
+    register:register,
+    login:login
+  }
