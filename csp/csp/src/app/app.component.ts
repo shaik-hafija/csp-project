@@ -64,6 +64,7 @@ view2()
 {
  this.view=false; 
 }
+  readarray1 = [];
   readarray = [];
   ngOnInit(): void { }
   Subscription: Subscription = new Subscription();
@@ -91,10 +92,10 @@ view2()
   Read() {
     this.Subscription = this.service.Read3(this.loginform.email).subscribe(
       (data: any) => {
-        this.readarray = data.rows[0];
+        this.readarray1 = data.rows[0];
         console.log(this.readarray);
         if (data.rows[0]) {
-          if (this.readarray[2] == this.loginform.password) {
+          if (this.readarray1[2] == this.loginform.password) {
             this.a = false;
             this.e = true;
             this.c = false;

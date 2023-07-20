@@ -6,3 +6,7 @@ function showForm(formId) {
   }
   document.getElementById(formId).classList.add("active");
 }
+function toggleProfileCard() {
+  const profileCard = document.getElementById('profileCard');
+  profileCard.style.display = profileCard.style.display === 'none' ? 'block' : 'none';
+}
